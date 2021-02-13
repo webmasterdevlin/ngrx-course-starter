@@ -1,6 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { untilDestroyed } from "ngx-take-until-destroy";
-
+import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
@@ -9,7 +7,7 @@ import { Router } from "@angular/router";
   templateUrl: "./villains.component.html",
   styleUrls: ["./villains.component.css"],
 })
-export class VillainsComponent implements OnInit, OnDestroy {
+export class VillainsComponent implements OnInit {
   villains: any[];
   itemForm: FormGroup;
   editedForm: FormGroup;
@@ -22,9 +20,6 @@ export class VillainsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.formBuilderInit();
   }
-
-  // this is needed in untilDestroyed
-  ngOnDestroy(): void {}
 
   async goToVillainDetail(id: string) {
     await this.router.navigateByUrl("/villains/villain-detail/" + id);

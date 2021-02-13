@@ -1,5 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { untilDestroyed } from "ngx-take-until-destroy";
+import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
@@ -8,7 +7,7 @@ import { Router } from "@angular/router";
   templateUrl: "./heroes.component.html",
   styleUrls: ["./heroes.component.css"],
 })
-export class HeroesComponent implements OnInit, OnDestroy {
+export class HeroesComponent implements OnInit {
   heroes: any[];
   itemForm: FormGroup;
   editedForm: FormGroup;
@@ -21,9 +20,6 @@ export class HeroesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.formBuilderInit();
   }
-
-  // this is needed in untilDestroyed
-  ngOnDestroy(): void {}
 
   async goToHeroDetail(id: string) {
     await this.router.navigateByUrl("/heroes/hero-detail/" + id);
