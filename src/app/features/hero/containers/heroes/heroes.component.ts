@@ -21,8 +21,8 @@ export class HeroesComponent implements OnInit {
     this.formBuilderInit();
   }
 
-  async handleNavigateHeroDetail(id: string) {
-    await this.router.navigateByUrl("/heroes/hero-detail/" + id);
+  handleNavigateHeroDetail(id: string) {
+    this.router.navigateByUrl("/heroes/hero-detail/" + id);
   }
 
   private formBuilderInit(): void {
