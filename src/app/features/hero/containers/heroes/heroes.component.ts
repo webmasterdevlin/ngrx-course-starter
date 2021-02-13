@@ -20,31 +20,10 @@ export class HeroesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.formBuilderInit();
-    this.fetchHeroes();
   }
 
   // this is needed in untilDestroyed
   ngOnDestroy(): void {}
-
-  fetchHeroes() {}
-
-  removeHero(id: string) {}
-
-  onSave() {
-    // stop here if form is invalid
-    if (this.itemForm.invalid) {
-      return;
-    }
-
-    this.itemForm.reset();
-  }
-
-  onUpdate() {
-    // stop here if form is invalid
-    if (this.editedForm.invalid) {
-      return;
-    }
-  }
 
   async goToHeroDetail(id: string) {
     await this.router.navigateByUrl("/heroes/hero-detail/" + id);
