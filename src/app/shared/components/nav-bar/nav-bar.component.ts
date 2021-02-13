@@ -10,9 +10,5 @@ export class NavBarComponent implements OnInit {
   totalVillains = 0;
   constructor() {}
 
-  ngOnInit(): void {
-    this.getStore();
-  }
-
-  getStore() {}
+  ngOnInit(): void {}
 }
